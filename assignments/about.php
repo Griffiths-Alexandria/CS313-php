@@ -14,9 +14,9 @@
        
        
 
-        <p class="title">About Me</p>
+        <p class="titleanimations">About Me</p>
         
-        <img src="/Image.jpg" alt="me and the kids">
+        <img src="/Image.jpg" alt="me and the kids" class="img">
            
         <p class="paragraph">
             Hi everyone! My name is Alex and I live in a beautiful city in North San Diego
