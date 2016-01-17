@@ -1,0 +1,359 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 9, 2015, 11:36:37 AM
+    Author     : griffiths
+*/
+
+body {
+    background-image: url("/images/background261.jpg")
+}
+
+.span {
+  word-wrap: break-word;
+  color: #232726;
+  float: right;
+  position: relative;
+  width: 70%;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  margin-top: 0px;
+  padding-left: 10px; 
+  /* text-align: center; */
+  padding-right: 10px;
+  margin-right: 20px;
+}
+
+
+
+
+#center {
+    margin: auto; 
+}
+
+p {
+  color: #ffffff;
+  float: right;
+  position: relative;
+  width: 70%;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #519193;
+  margin-top: 20px;
+  padding-left: 10px; 
+  text-align: center;
+  padding-right: 10px;
+  margin-right: 20px;
+}
+
+div .div{
+  background-color: #519193;
+
+}
+
+iframe {
+    width: 80%; 
+}
+
+p a{
+    text-decoration: none; 
+    font-size: 20px; 
+}
+
+h2 {
+    color: #ffffff; 
+    padding-left: 40px;
+}
+
+h2 a {
+    text-decoration: none; 
+}
+
+h2 a:hover{
+    color: #519193; 
+}
+
+h2 a:visited {
+    text-decoration: none; 
+    color: #ffffff; 
+}
+
+h1 {
+     color: #ffffff; 
+     font-size: 4em; 
+}
+
+div {
+    width: 20%; 
+    float: left;
+    padding-left: 20px;
+}
+
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  width: 100%; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu {
+  font-family: Roboto, sans-serif;
+}
+#cssmenu > ul {
+  width: 100%;
+  background: #ffffff;
+}
+#cssmenu > ul > li > a {
+  padding: 12px 15px;
+  font-size: 1.10em;
+  color: #232726;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  transition: color .2s cubic-bezier(0.25, 0.1, 0, 1.2);
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #222222;
+}
+
+footer {
+    display: block;
+    position: relative;
+    margin-top: 500px; 
+    color: #ffffff; 
+    padding: 10px;
+}
+
+h6 {
+    font-size: 1em; 
+}
+
+.paragraph {
+    text-align: left; 
+    font-size: 1.25em; 
+}
+
+.titletrans {
+    font-size: 3em; 
+    text-align: center; 
+    transition: 2000ms cubic-bezier(.32,-1.04,.55,1.65);  
+}
+
+.titletrans:hover {
+    font-size: 4em; 
+}
+
+.title {
+    font-size: 3em; 
+}
+
+.titleforms {
+    font-size: 3em; 
+}
+
+.titleforms:hover {
+    transform: rotatex(180deg); 
+   }
+   
+.two {
+    padding-top: 300px; 
+   }  
+ 
+.three {
+    padding-top: 300px; 
+   }    
+   
+.one {
+       padding-bottom: 500px; 
+      
+   }   
+   
+.slowtran {
+       transition-duration: 2000ms; 
+   }   
+   
+.titleanimations { 
+    font-size: 3em; 
+    text-align: center;
+    -webkit-animation-delay: 2s; 
+    animation-delay: 2s; 
+    -webkit-animation-duration: 5s; 
+    animation-duration: 5s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+} 
+
+@-webkit-keyframes flipInX { 
+    0% {-webkit-transform: perspective(400px) rotateX(90deg); 
+        opacity: 0;} 
+    40% {-webkit-transform: perspective(400px) rotateX(-10deg);} 
+    70% {-webkit-transform: perspective(400px) rotateX(10deg);} 
+    100% {-webkit-transform: perspective(400px) rotateX(0deg); 
+        opacity: 1;} 
+} 
+@keyframes flipInX { 
+    0% {transform: perspective(400px) rotateX(90deg); 
+        opacity: 0;
+        background-color: red;} 
+   40% {transform: perspective(400px) rotateX(-10deg);
+        background-color: yellow;} 
+    70% {transform: perspective(400px) rotateX(10deg);
+        background-color: purple;} 
+    100% {transform: perspective(400px) rotateX(0deg); 
+        opacity: 1;
+        background-color: #519193;} 
+
+
+} 
+.flipInX { 
+    -webkit-backface-visibility: visible !important; 
+    -webkit-animation-name: flipInX; 
+    backface-visibility: visible !important; 
+    animation-name: flipInX; 
+}
+
+#userinfo {
+      color: #ffffff;
+  float: right;
+  position: relative;
+  width: 70%;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #519193;
+  margin-top: 0px;
+  padding-left: 10px; 
+  text-align: center;
+  padding-right: 10px;
+  margin-right: 20px;
+}
+
+#savedinfo {
+    color: #ffffff;
+  float: right;
+  position: relative;
+  width: 70%;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #519193;
+  margin-top: 0px;
+  padding-left: 10px; 
+  text-align: center;
+  padding-right: 10px;
+  margin-right: 20px;
+}
+
+
+@media screen and (max-width: 480px){
+    .title {
+        font-size: 1em; 
+    
+        width: 100%;
+        margin-right: 0px;
+        margin-top: 10px;
+}
+    
+    h2 {
+        font-size: 1em; 
+    }
+    
+    #cssmenu {
+        
+    }
+    
+    #box {
+    width: 80%;
+        
+    text-align: center;
+    /* padding-left: 45px; */
+    }
+
+    footer {
+    display: table;
+    
+    /* padding-top: 500px; */
+    position: relative;
+}
+    .paragraph {
+    font-size: 1em;
+    
+    width: 95%;
+    margin: auto;
+}
+    
+    .font {
+    font-size: 1em;
+        
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+    
+    .span {
+    font-size: 1em;
+        
+    width: 95%;
+    margin: auto;
+}
+    
+    body {
+    width: 100%;
+        
+    margin-right: 0px;
+}
+
+.font a {
+    font-size: 1em;
+    word-wrap: break-word; 
+}
+
+.titleanimations {
+    font-size: 1em;
+    
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.titleforms {
+    font-size: 1em;
+    
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.titletrans {
+    font-size: 1em;
+    
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+}
