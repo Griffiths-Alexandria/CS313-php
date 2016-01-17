@@ -1,23 +1,21 @@
 <h1 class="title">CS 313 Web Engineering</h1>   
 
+   <div id='box'> 
 
-<h2 class="font"><a href="/index.php" title="Home">HOME</a></h2>
+            <nav id="cssmenu">
 
-<div id='box'> 
-        
-        <nav id="cssmenu">
-         
-            <ul id="navigation">
-                
-                <li><a href="/assignments/about.php" title="About Me" class="font">About Me</a></li>
-                <li><a href="/assignments/assignments.php" title="Assignments" class="font">Assignments</a></li>
-               
-            </ul>
-            
+                <ul id="navigation">
+                    
+                    <li><a href="index.html" title="Home" class="font">Home</a></li>
+                    <li><a href="/assignments/about.php" title="About Me" class="font">About Me</a></li>
+                    <li><a href="/assignments/assignments.php" title="Assignments" class="font">Assignments</a></li>
 
-            
-            
-            
-        </nav>
-    
-</div> 
+                </ul>
+
+
+
+
+
+            </nav>
+
+        </div> 

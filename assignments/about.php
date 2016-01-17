@@ -14,7 +14,7 @@
        
        
 
-        <p class="titleanimations">About Me</p>
+        <p class="title">About Me</p>
         
         <img src="/Image.jpg" alt="me and the kids" class="img">
            

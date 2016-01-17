@@ -62,7 +62,10 @@ iframe {
 }
 
 .img {
-    width: 70%;
+    width: 20%;
+    float: left;
+    margin-left: 90px;
+    margin-top: 80px;
 }
 
 p a{
@@ -134,8 +137,7 @@ div {
   -ms-transition: color .2s ease;
   transition: color .2s cubic-bezier(0.25, 0.1, 0, 1.2);
 }
-#cssmenu > ul > li:hover > a,
-#cssmenu > ul > li > a:hover {
+#cssmenu a:hover {
   color: #222222;
 }
 
