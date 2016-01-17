@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 body {
-    background-image: url("/images/background261.jpg")
+    background-image: url("background261.jpg")
 }
 
 .span {
