@@ -135,7 +135,7 @@ div {
   -ms-transition: color .2s ease;
   transition: color .2s cubic-bezier(0.25, 0.1, 0, 1.2);
 }
-#cssmenu a:hover {
+#cssmenu > ul > li > a:hover {
   color: #222222;
 }
 
