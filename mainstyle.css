@@ -124,19 +124,23 @@ div {
   width: 100%;
   background: #ffffff;
 }
+
+#cssmenu > ul:hover {
+  width: 100%;
+  background: #519193;
+}
+
 #cssmenu > ul > li > a {
   padding: 12px 15px;
   font-size: 1.10em;
+  transition: color .2s ease;
   color: #232726;
   font-weight: 700;
   text-decoration: none;
-  -webkit-transition: color .2s ease;
-  -o-transition: color .2s ease;
-  -ms-transition: color .2s ease;
-  transition: color .2s cubic-bezier(0.25, 0.1, 0, 1.2);
+ 
 }
 #cssmenu > ul > li > a:hover {
-  color: #222222;
+  color: #519193;
 }
 
 footer {
