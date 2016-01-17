@@ -6,7 +6,7 @@
 
                 <ul id="navigation">
                     
-                    <li><a href="index.html" title="Home" class="font">Home</a></li>
+                    <li><a href="/index.html" title="Home" class="font">Home</a></li>
                     <li><a href="/assignments/about.php" title="About Me" class="font">About Me</a></li>
                     <li><a href="/assignments/assignments.php" title="Assignments" class="font">Assignments</a></li>
 
