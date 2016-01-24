@@ -41,15 +41,15 @@ fputs($fp, $insertvote);
 fclose($fp);
 ?>
 
-<h2>Result:</h2>
+<h3>Result:</h3>
 <table>
     <tr>
-        <td>Lightsaber: <?php echo(100 * round($saber / ($saber + $phaser + $sonic + $disk + $cricket + $wookie), 2)); ?></td>
+        <td>Lightsaber: <?php echo(100 * round($saber / ($saber + $phaser + $sonic + $disk + $cricket + $wookie), 2)); ?>%</td>
         <td>
             <img src="/poll.gif"
                  width='<?php echo(100 * round($saber / ($saber + $phaser + $sonic + $disk + $cricket + $wookie), 2)); ?>'
                  height='20'>
-            %
+            
         </td>
     </tr>
     <td>Phaser: <?php echo(100 * round($saber / ($phaser + $phaser + $sonic + $disk + $cricket + $wookie), 2)); ?>%</td>

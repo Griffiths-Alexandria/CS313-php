@@ -165,7 +165,10 @@ h6 {
 #poll {
     background-color: #ffffff;
     text-align: left;
-    font-size: 1.25em
+    font-size: 1.25em;
+    font-family: sans-serif;
+    margin-left: 50px;
+    padding-bottom: 50px;
 }
 
 .titletrans {
