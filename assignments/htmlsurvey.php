@@ -39,7 +39,7 @@
                 <input type="radio" name="vote" value="3" onclick="getVote(this.value)">Identity Disk <br>
                 <input type="radio" name="vote" value="4" onclick="getVote(this.value)">The Noisy Cricket <br>
                 <input type="radio" name="vote" value="5" onclick="getVote(this.value)">Wookie <br>
-                <input type="button" name="vote" value="vote" onclick="getVote()"/>
+                <a onclick="getVote(-1)" href="#poll">View Results</a>
             </form>
             
         
