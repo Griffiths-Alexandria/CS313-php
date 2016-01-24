@@ -17,9 +17,11 @@
         <p class="title">Assignments</p>
        
            
-        <p class="paragraph">
-Coming Soon
-        </p>
+     
+                        <ul class="paragraph"> 
+                            <li><a href="/assignments/htmlsurvey.html" title="phpsurvey" class="font">PHP Survey</a></li>
+                        </ul>
+    
         
         <?php include $_SERVER['DOCUMENT_ROOT']. '/modules/footer.php'; ?>
     </body>
