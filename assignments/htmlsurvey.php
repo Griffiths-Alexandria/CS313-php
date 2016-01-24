@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include $_SERVER['DOCUMENT_ROOT']. '/modules/meta.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/modules/meta.php'; ?>
         <title>About Me</title>
 
         <script>
@@ -28,7 +28,7 @@
 
 
 
-        <?php include $_SERVER['DOCUMENT_ROOT']. '/modules/header.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/modules/header.php'; ?>
 
         <div id="poll">
             <h3>It's not safe out there. Take one of these:</h3>
@@ -39,11 +39,13 @@
                 <input type="radio" name="vote" value="3" onclick="getVote(this.value)">Identity Disk <br>
                 <input type="radio" name="vote" value="4" onclick="getVote(this.value)">The Noisy Cricket <br>
                 <input type="radio" name="vote" value="5" onclick="getVote(this.value)">Wookie <br>
-                <br>
-                <a onclick="getVote(-1)" href="#poll">View Results</a>
+                <br> 
+              
+                    <a onclick="getVote(-1)" href="#poll">View Results</a>
+              
             </form>
-            
-        
+
+
         </div>
 
     </body>

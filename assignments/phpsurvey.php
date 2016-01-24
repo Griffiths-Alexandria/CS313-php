@@ -94,5 +94,5 @@ fclose($fp);
 </tr>
 
 </table>
-
+<br>
 <a href='/assignments/htmlsurvey.php'>Back to Voting</a>
