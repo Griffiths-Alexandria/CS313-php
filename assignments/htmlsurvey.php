@@ -39,8 +39,9 @@
                 <input type="radio" name="vote" value="3" onclick="getVote(this.value)">Identity Disk <br>
                 <input type="radio" name="vote" value="4" onclick="getVote(this.value)">The Noisy Cricket <br>
                 <input type="radio" name="vote" value="5" onclick="getVote(this.value)">Wookie <br>
+                <input type='submit' name='submit' id='submit' value='View Results'/>
             </form>
-            <button type='button' value='submit' onclick="getVote(this.value)">View Results</button>
+            
         
         </div>
 
