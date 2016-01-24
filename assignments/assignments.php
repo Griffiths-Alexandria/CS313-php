@@ -19,7 +19,7 @@
            
      
                         <ul class="paragraph"> 
-                            <li><a href="/assignments/htmlsurvey.html" title="phpsurvey" class="font">PHP Survey</a></li>
+                            <li><a href="/assignments/htmlsurvey.php" title="phpsurvey" class="font">PHP Survey</a></li>
                         </ul>
     
         
