@@ -30,14 +30,18 @@
 
         <?php include $_SERVER['DOCUMENT_ROOT']. '/modules/header.php'; ?>
 
-        <div id="poll">
-            <h3>Do you like PHP and AJAX so far?</h3>
+        <div id="poll" class="paragraph">
+            <h3>It's not safe out there. Take one of these:</h3>
             <form>
-                Yes:
-                <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
-                <br>No:
-                <input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+                <input type="radio" name="vote" value="0" onclick="getVote(this.value)">Lightsaber <br>
+                <input type="radio" name="vote" value="1" onclick="getVote(this.value)">Phaser <br>              
+                <input type="radio" name="vote" value="2" onclick="getVote(this.value)">Sonic Screwdriver <br>
+                <input type="radio" name="vote" value="3" onclick="getVote(this.value)">Identity Disk <br>
+                <input type="radio" name="vote" value="4" onclick="getVote(this.value)">The Noisy Cricket <br>
+                <input type="radio" name="vote" value="5" onclick="getVote(this.value)">Wookie <br>
             </form>
+            <button type='button' value='submit' onclick="getVote(this.value)">View Results</button>
+        
         </div>
 
     </body>
