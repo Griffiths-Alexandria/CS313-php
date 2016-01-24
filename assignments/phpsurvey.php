@@ -43,52 +43,52 @@ fclose($fp);
 <h2>Result:</h2>
 <table>
 <tr>
-<td>Lightsaber: <?php echo(100*round($saber/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%</td>
+<td>Lightsaber:</td>
 <td>
 <img src="/poll.gif"
 width='<?php echo(100*round($saber/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>'
 height='20'>
-
+<?php echo(100*round($saber/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%
 </td>
 </tr>
-<td>Phaser: <?php echo(100*round($saber/($phaser+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%</td>
+<td>Phaser:</td>
 <td>
 <img src="/poll.gif"
 width='<?php echo(100*round($phaser/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>'
 height='20'>
-
+<?php echo(100*round($saber/($phaser+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%
 </td>
 </tr>
-<td>Sonic Screwdriver: <?php echo(100*round($sonic/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%</td>
+<td>Sonic Screwdriver:</td>
 <td>
 <img src="/poll.gif"
 width='<?php echo(100*round($sonic/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>'
 height='20'>
-
+<?php echo(100*round($sonic/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%
 </td>
 </tr>
-<td>Identity Disk: <?php echo(100*round($disk/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%</td>
+<td>Identity Disk:</td>
 <td>
 <img src="/poll.gif"
 width='<?php echo(100*round($disk/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>'
 height='20'>
-
+<?php echo(100*round($disk/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%
 </td>
 </tr>
-<td>The Noisy Cricket: <?php echo(100*round($cricket/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%</td>
+<td>The Noisy Cricket:</td>
 <td>
 <img src="/poll.gif"
 width='<?php echo(100*round($cricket/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>'
 height='20'>
-
+<?php echo(100*round($cricket/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%
 </td>
 </tr>
-<td>Wookie: <?php echo(100*round($wookie/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%</td>
+<td>Wookie:</td>
 <td>
 <img src="/poll.gif"
 width='<?php echo(100*round($wookie/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>'
 height='20'>
-
+<?php echo(100*round($wookie/($saber+$phaser+$sonic+$disk+$cricket+$wookie),2)); ?>%
 </td>
 </tr>
 
