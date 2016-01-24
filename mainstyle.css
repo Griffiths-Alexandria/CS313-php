@@ -162,6 +162,12 @@ h6 {
     font-size: 1.25em; 
 }
 
+#poll {
+    background-color: #ffffff;
+    text-align: left;
+    font-size: 1.25em
+}
+
 .titletrans {
     font-size: 3em; 
     text-align: center; 
