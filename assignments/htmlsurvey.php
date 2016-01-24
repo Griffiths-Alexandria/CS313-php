@@ -30,7 +30,7 @@
 
         <?php include $_SERVER['DOCUMENT_ROOT']. '/modules/header.php'; ?>
 
-        <div id="poll" class="paragraph">
+        <div class="paragraph">
             <h3>It's not safe out there. Take one of these:</h3>
             <form>
                 <input type="radio" name="vote" value="0" onclick="getVote(this.value)">Lightsaber <br>
