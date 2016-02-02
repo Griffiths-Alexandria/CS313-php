@@ -52,7 +52,7 @@ fclose($fp);
             
         </td>
     </tr>
-    <td>Phaser: <?php echo(100 * round($saber / ($phaser + $phaser + $sonic + $disk + $cricket + $wookie), 2)); ?>%</td>
+    <td>Phaser: <?php echo(100 * round($phaser / ($phaser + $phaser + $sonic + $disk + $cricket + $wookie), 2)); ?>%</td>
     <td>
         <img src="/poll.gif"
              width='<?php echo(100 * round($phaser / ($saber + $phaser + $sonic + $disk + $cricket + $wookie), 2)); ?>'
