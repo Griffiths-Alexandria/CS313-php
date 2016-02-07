@@ -1,6 +1,6 @@
 <?php
 
-$dbhost = 'localhost';
+$dbhost = '127.10.230.130';
 $dbuser = 'adminlyaXSvD';
 $dbpass = 'bTytkAuukZCc';
 $dbname = 'recipe_db';
