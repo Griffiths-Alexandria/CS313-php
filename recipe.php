@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Scripture List</title>
+        <title>Recipes</title>
     </head>
 
     <body>
@@ -11,32 +11,25 @@
 
             <?php include '/recipedb.php'; 
           
-try
-{
-	// Create the PDO connection
-	$db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 
-	// prepare the statement
-	$statement = $db->prepare('SELECT authorID, recipeID, meal_typeID, ingredientID FROM food_recipe');
-	$statement->execute();
+    try
+    {
+ //create a secure database variable
+	  echo '<p>';
+	  
+	  //Loop for each row in the selected table, writing the contents of the book, chapter, verse, and content columns
+	  foreach ($db->query('SELECT * FROM food_recipe') as $row) {
+        echo '<b>'.$row['recipeID'].' '.$row['ingredientID'].':'.$row['meal_typeID'].'</b> - '.$row['authorID'].'<br />';
+      }
+	  echo '</p>';
+    }
 
-	// Go through each result
-	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-	{
-		echo '<p>';
-		echo '<strong>' . $row['authorID'] . ' ' . $row['recipeID'] . ':';
-		echo $row['ingredientID'] . '</strong>' . ' - ' . $row['meal_typeID'];
-		echo '</p>';
-	}
-
-}
-catch (PDOException $ex)
-{
-	echo "Error connecting to DB. Details: $ex";
-	die();
-}
-
-?>
+    catch (PDOException $ex) //If database cannot be reliably accessed, abort.
+    {
+      echo 'Error!: ' . $ex->getMessage();
+      die(); 
+    }
+  ?>
 
 
         </div>
