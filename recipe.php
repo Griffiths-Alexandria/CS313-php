@@ -11,24 +11,30 @@
 
             <?php include '/recipedb.php'; 
           
+try
+{
 
-    try
-    {
- //create a secure database variable
-	  echo '<p>';
-	  
-	  //Loop for each row in the selected table, writing the contents of the book, chapter, verse, and content columns
-	  foreach ($db->query('SELECT * FROM food_recipe') as $row) {
-        echo '<b>'.$row['recipeID'].' '.$row['ingredientID'].':'.$row['meal_typeID'].'</b> - '.$row['authorID'].'<br />';
-      }
-	  echo '</p>';
-    }
+	// prepare the statement
+	$statement = $db->prepare('SELECT * FROM food_recipe');
+	$statement->execute();
 
-    catch (PDOException $ex) //If database cannot be reliably accessed, abort.
-    {
-      echo 'Error!: ' . $ex->getMessage();
-      die(); 
-    }
+	// Go through each result
+	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+	{
+		echo '<p>';
+		echo '<strong>' . $row['recipeID'] . ' ' . $row['ingredientID'] . ':';
+		echo $row['meal_typeID'] . '</strong>' . ' - ' . $row['authorID'];
+		echo '</p>';
+	}
+
+}
+catch (PDOException $ex)
+{
+	echo "Error connecting to DB. Details: $ex";
+	die();
+}
+
+?>
   ?>
 
 
