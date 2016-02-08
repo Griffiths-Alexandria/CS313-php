@@ -23,7 +23,7 @@
         
 
 	// prepare the statement
-	$statement = $db->prepare('SELECT r.*, l.* FROM recipes r, link i WHERE r.recipeID = l.recipeID');
+	$statement = $db->prepare('SELECT recipetitle, recipedesc FROM recipes');
 	$statement->execute();
 
 	// Go through each result
