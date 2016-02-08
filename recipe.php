@@ -9,10 +9,14 @@
 
             <h1>Delicious Recipes</h1>
 
+
             <?php include '/recipedb.php'; 
+            
+            
           
 try
 {
+ $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword); 
 
 	// prepare the statement
 	$statement = $db->prepare('SELECT * FROM food_recipe');
@@ -35,7 +39,14 @@ catch (PDOException $ex)
 }
 
 ?>
-  ?>
+
+                <h3>Search  Recipes</h3>
+    <p>Search by Ingredient</p>
+    <form  method="post" action="recipedb.php"  id="searchform">
+      <input  type="text" name="name">
+      <input  type="submit" name="submit" value="Search">
+    </form>
+
 
 
         </div>
