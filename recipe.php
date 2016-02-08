@@ -23,7 +23,7 @@
         
 
 	// prepare the statement
-	$statement = $db->prepare('SELECT recipetitle, recipedesc FROM recipes');
+	$statement = $db->prepare('SELECT recipetitle, recipedescription FROM recipe');
 	$statement->execute();
 
 	// Go through each result
@@ -31,7 +31,7 @@
 	{
 		echo '<p>';
 		echo '<strong>' . $row['recipetitle'] . ' ' . $row['ingredientname'];
-		echo $row['recipedesc'];
+		echo $row['recipedescription'];
 		echo '</p>';
 	}
 
