@@ -23,7 +23,7 @@
         
 
 	// prepare the statement
-	$statement = $db->prepare('SELECT r.recipetitle, r.recipedescription, i.ingredientname FROM recipe r FULL OUTER JOIN ingredient i WHERE r.recipeID = i.recipeID');
+	$statement = $db->prepare('SELECT recipetitle, recipedescription FROM recipe');
 	$statement->execute();
 
 	// Go through each result
