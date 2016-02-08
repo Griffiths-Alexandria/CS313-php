@@ -30,8 +30,8 @@
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<p>';
-		echo '<strong>' . $row['recipeID'] . ' ' . $row['ingredientID'] . ':';
-		echo $row['meal_typeID'] . '</strong>' . ' - ' . $row['authorID'];
+		echo '<strong>' . $row['recipetitle'] . ' ' . $row['recipedesc'];
+		echo $row['ingredientname'] . '</strong>' . ' - ' . $row['authorfirstname'];
 		echo '</p>';
 	}
 
