@@ -9,14 +9,18 @@
 
             <h1>Delicious Recipes</h1>
 
-
-            <?php include '/recipedb.php'; 
+<?php 
+             try
+    {
+      $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');                                       //Get host from OpenShift
+      $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');                                       //Get Port from OpenShift
+      $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');                                   //Get UserName from OpenShift
+      $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');                               //Get Password from OpenShift
+	  $dbName = "recipes_db";                                                              //Assign a static Database name
+	  $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);  //create a secure database variable
             
             
-          
-try
-{
- $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword); 
+        
 
 	// prepare the statement
 	$statement = $db->prepare('SELECT * FROM food_recipe');

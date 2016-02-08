@@ -1,11 +1,5 @@
 <?php
-
-$dbHost = 'localhost';                                       //Get host from OpenShift
-$dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');                                       //Get Port from OpenShift
-$dbUser = 'classmate313';                                   //Get UserName from OpenShift
-$dbPassword = 'password';                               //Get Password from OpenShift
-$dbName = "recipe_db";                                                              //Assign a static Database name
-	 
+                                                 
   if(isset($_POST['submit'])){
   if(isset($_GET['go'])){
   if(preg_match("/^[  a-zA-Z]+/", $_POST['ingredientname'])){
