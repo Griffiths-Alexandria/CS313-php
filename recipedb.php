@@ -9,12 +9,12 @@
   //-select  the database to use
   $mydb=mysql_select_db($dbName);
   //-query  the database table
-  $sql = "SELECT * FROM `recipes_db`.`ingredient` WHERE (CONVERT(`ingredientID` USING utf8) LIKE". $name . "OR CONVERT(`ingredientname` USING utf8) LIKE". $name . "OR CONVERT(`ingredient_measurement` USING utf8) LIKE".$name.")";
+  $sql = "SELECT * FROM `recipes_db`.`ingredient` WHERE (CONVERT(`ingredientID` USING utf8) LIKE $name OR CONVERT(`ingredientname` USING utf8) LIKE $name OR CONVERT(`ingredient_measurement` USING utf8) LIKE $name)";
   //-run  the query against the mysql query function
   $result=mysql_query($sql);
   //-create  while loop and loop through result set
   while($row=mysql_fetch_array($result)){
-          $recipetitle  =$row['recipetite'];
+          $recipetitle  = $row['recipetite'];
           $recipeID = $row['recipeID'];
   //-display the result of the array
   echo $recipetitle;
