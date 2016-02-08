@@ -9,17 +9,15 @@
   //-select  the database to use
   $mydb=mysql_select_db($dbName);
   //-query  the database table
-  $sql="SELECT ingredientname, recipeID FROM recipe WHERE ingredientname LIKE '%" . $name;
+  $sql = "SELECT * FROM `recipes_db`.`ingredient` WHERE (CONVERT(`ingredientID` USING utf8) LIKE". $name . "OR CONVERT(`ingredientname` USING utf8) LIKE". $name . "OR CONVERT(`ingredient_measurement` USING utf8) LIKE".$name.")";
   //-run  the query against the mysql query function
   $result=mysql_query($sql);
   //-create  while loop and loop through result set
   while($row=mysql_fetch_array($result)){
-          $ingredientname  =$row['ingredientname'];
+          $recipetitle  =$row['recipetite'];
           $recipeID = $row['recipeID'];
   //-display the result of the array
-  echo "<ul>\n";
-  echo "<li>" . "<a  href=\"search.php?id=$recipeID\">"   .$ingredientname. "</a></li>\n";
-  echo "</ul>";
+  echo $recipetitle;
   }
   }
   else{

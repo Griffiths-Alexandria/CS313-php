@@ -23,15 +23,15 @@
         
 
 	// prepare the statement
-	$statement = $db->prepare('SELECT * FROM food_recipe');
+	$statement = $db->prepare('SELECT r.*, l.* FROM recipes r, link i WHERE r.recipeID = l.recipeID');
 	$statement->execute();
 
 	// Go through each result
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<p>';
-		echo '<strong>' . $row['recipetitle'] . ' ' . $row['recipedesc'];
-		echo $row['ingredientname'] . '</strong>' . ' - ' . $row['authorfirstname'];
+		echo '<strong>' . $row['recipetitle'] . ' ' . $row['ingredientname'];
+		echo $row['recipedesc'];
 		echo '</p>';
 	}
 
