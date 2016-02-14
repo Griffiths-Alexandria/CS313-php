@@ -59,7 +59,7 @@ try
 	// Go through each result
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
-		echo '<input type="checkbox" name="chkMealType[]" value="' . $row["id"] . '">';
+		echo '<input type="checkbox" name="chkMealType[]" value="' . $row['mealtypeID'] . '">';
 		echo $row['mealtypeDESC'];
 		echo '</input><br />';
 
