@@ -10,5 +10,31 @@ and open the template in the editor.
 
 body {
     background-image: url('recipebackground.jpg');
+}
+
+.body {
     font-family: sans-serif; 
+    width: 80%;
+    color: white; 
+}
+
+button {
+
+}
+
+p {
+
+}
+
+h1 {
+
+}
+
+h3 {
+
+}
+
+button a {
+    text-decoration: none; 
+    color: azure;
 }

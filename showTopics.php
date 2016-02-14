@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Recipes</title>
-                <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="description" content="CS313 Web Engineering">
         <meta name="keywords" content="HTML,CSS,XML,JavaScript,php">
         <meta name="author" content="Alexandria Lenz">
