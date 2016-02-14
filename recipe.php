@@ -13,7 +13,7 @@
 
     <body>
         <div class="body">
-
+<?php include $_SERVER['DOCUMENT_ROOT']. '/secondnav.php'; ?>
             <h1>Delicious Recipes</h1>
 
             <h2>Enter New Recipe:</h2>

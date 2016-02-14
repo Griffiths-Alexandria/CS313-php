@@ -13,21 +13,60 @@ body {
 }
 
 .body {
-    font-family: sans-serif; 
-    width: 80%;
-    color: white; 
+    width: 70%;
+    display: block;
+    text-align: center;
+    margin: auto;
 }
+
+/**NAVIGATION**/
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #005f5f;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
 
 button {
 
 }
 
 p {
-
+font-family: sans-serif;
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-bottom: 1em;
 }
 
 h1 {
-
+    font-family: sans-serif;
 }
 
 h3 {
