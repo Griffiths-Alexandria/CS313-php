@@ -50,7 +50,7 @@ try
 	$statement2->bindParam(':ingredientNAME', $ingname);
 	$statement2->bindParam(':ingredientMEAS', $ingmeas);
 
-	$statement->execute();
+	$statement2->execute();
 
 	// get the new id
 	$ingredientID = $db->lastInsertId();
