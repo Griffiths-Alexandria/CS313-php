@@ -13,89 +13,20 @@
 
 <form id="mainForm" action="recipedb.php" method="POST">
 
-	<input type="text" id="recipeNAME" name="recipeNAME">
+	
 	<label for="recipeNAME">Recipe Name</label>
-	<br /><br />
+	<input type="text" id="recipeNAME" name="recipeNAME">
+        <br /><br />
 
+	
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
 	<input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
+        <br /><br />
 
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />
 	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
 	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />        
-	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
 	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
-        	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
-        	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
-        	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
-        	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
-        	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
-        	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
-        	
-        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
-	<label for="ingredientMEAS">Ingredient Measurement:</label>
-	<br /><br />
-
-	<input type="text" id="ingredientNAME" name="ingredientNAME">
-	<label for="ingredientNAME">Ingredient Name:</label>
-	<br /><br />   
+        <br /><br/>   
 
 	<label for="recipeDESC">Recipe Description:</label><br />
 	<textarea id="recipeDESC" name="recipeDESC" rows="4" cols="50"></textarea>
@@ -129,7 +60,7 @@ try
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<input type="checkbox" name="chkMealType[]" value="' . $row["id"] . '">';
-		echo $row['name'];
+		echo $row['mealtypeDESC'];
 		echo '</input><br />';
 
 		// put a newline out there just to make our "view source" experience better
@@ -149,7 +80,7 @@ catch (PDOException $ex)
 
 	<br />
 
-	<input type="submit" value="Add to Database" />
+	<input type="submit" value="ADD RECIPE" />
 
 </form>
         </div>

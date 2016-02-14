@@ -1,16 +1,4 @@
 <?php
-/**********************************************************
-* File: insertTopic.php
-* Author: Br. Burton
-* 
-* Description: Takes input posted from topicEntry.php
-*   This file enters a new scripture into the database
-*   along with its associated topics.
-*
-*   This file actually does not do any rendering at all,
-*   instead it redirects the user to showTopics.php to see
-*   the resulting list.
-***********************************************************/
 
 // get the data from the POST
 $name = $_POST['recipeNAME'];
