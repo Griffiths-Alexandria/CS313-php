@@ -5,12 +5,12 @@ $name = $_POST['recipeNAME'];
 $ingmeas = $_POST['ingredientMEAS'];
 $ingname = $_POST['ingredientNAME'];
 $content = $_POST['recipeDESC'];
-$topicIds = $_POST['chkMealType'];
+$mealtypeIDs = $_POST['chkMealType'];
 
-echo "recipename=$name\n";
-echo "ingmeas=$ingmeas\n";
-echo "ingname=$ingname\n";
-echo "content=$content\n";
+echo "recipeNAME=$name\n";
+echo "ingredientMEAS=$ingmeas\n";
+echo "ingredientNAME=$ingname\n";
+echo "recipeDESC=$content\n";
 
 // we could put additional checks here to verify that all this data is actually provided
 
@@ -58,7 +58,7 @@ try
 	// Now go through each topic id in the list from the user's checkboxes
 	foreach ($mealtypeIDs as $mealtypeID)
 	{
-		$statement = $db->prepare('INSERT INTO recipe(recipeID, mealtypeID) VALUES(:recipeID, :mealtypeID)');
+		$statement = $db->prepare('INSERT INTO recipelink(recipeID, mealtypeID) VALUES(:recipeID, :mealtypeID)');
 
 		$statement->bindParam(':recipeID', $recipeID);
 		$statement->bindParam(':mealtypeID', $mealtypeID);
