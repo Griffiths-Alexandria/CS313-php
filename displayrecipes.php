@@ -24,10 +24,11 @@
            
 
 	// prepare the statement
-	$statement = $db->prepare("SELECT DISTINCT recipe.recipeNAME, recipe.recipeDESC, ingredient.ingredientNAME, ingredient.ingredientMEAS\n"
-    . "FROM ingredient\n"
-    . "INNER JOIN recipe\n"
-    . "ON ingredient.recipeID=recipe.recipeID LIMIT 0, 30 ");
+	$statement = $db->prepare('SELECT recipe.recipeNAME, recipe.recipeDESC, ingredient.ingredientNAME, ingredient.ingredientMEAS
+FROM recipe
+INNER JOIN ingredient
+ON recipe.recipeID=ingredient.recipeID 
+GROUP BY recipe.recipeID');
 	$statement->execute();
 
 	// Go through each result
