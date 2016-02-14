@@ -9,52 +9,149 @@
 
             <h1>Delicious Recipes</h1>
 
-<?php 
-             try
-    {
+  <h2>Enter New Recipe:</h2>
+
+<form id="mainForm" action="recipedb.php" method="POST">
+
+	<input type="text" id="recipeNAME" name="recipeNAME">
+	<label for="recipeNAME">Recipe Name</label>
+	<br /><br />
+
+	<input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />
+	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />        
+	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+        	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+        	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+        	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+        	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+        	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+        	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+        	
+        <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+	<label for="ingredientMEAS">Ingredient Measurement:</label>
+	<br /><br />
+
+	<input type="text" id="ingredientNAME" name="ingredientNAME">
+	<label for="ingredientNAME">Ingredient Name:</label>
+	<br /><br />   
+
+	<label for="recipeDESC">Recipe Description:</label><br />
+	<textarea id="recipeDESC" name="recipeDESC" rows="4" cols="50"></textarea>
+	<br /><br />
+
+	<label>Meal Type:</label><br />
+
+<?php
+// This section will now generate the available check boxes for topics
+// based on what is in the database
+
+
+// It would be better to store these in a different file
       $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');                                       //Get host from OpenShift
       $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');                                       //Get Port from OpenShift
       $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');                                   //Get UserName from OpenShift
       $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');                               //Get Password from OpenShift
 	  $dbName = "recipes_db";                                                              //Assign a static Database name
-	  $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);  //create a secure database variable
-            
-            
-        
+	  // for my configuration, I need this rather than 'localhost'
+
+try
+{
+	// Create the PDO connection
+ $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword); 
 
 	// prepare the statement
-	$statement = $db->prepare('SELECT recipetitle, recipedescription FROM recipe');
+	$statement = $db->prepare('SELECT mealtypeID, mealtypeDESC FROM mealtype');
 	$statement->execute();
 
 	// Go through each result
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
-		echo '<p>';
-		echo '<strong>' . $row['recipetitle'] . ' ' . $row['ingredientname'];
-		echo '</p> <p>';
-                echo $row['recipedescription'];
-		echo '</p>';
+		echo '<input type="checkbox" name="chkMealType[]" value="' . $row["id"] . '">';
+		echo $row['name'];
+		echo '</input><br />';
+
+		// put a newline out there just to make our "view source" experience better
+		echo "\n";
 	}
 
 }
 catch (PDOException $ex)
 {
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
 	echo "Error connecting to DB. Details: $ex";
 	die();
 }
 
 ?>
 
-                <h3>Search  Recipes</h3>
-    <p>Search by Ingredient</p>
-    <form  method="post" action="recipedb.php"  id="searchform">
-      <input  type="text" name="name">
-      <input  type="submit" name="submit" value="Search">
-    </form>
+	<br />
 
+	<input type="submit" value="Add to Database" />
 
-
+</form>
         </div>
-
     </body>
 </html>

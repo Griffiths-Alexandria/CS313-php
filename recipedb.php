@@ -1,27 +1,96 @@
 <?php
-                                                 
-  if(isset($_POST['submit'])){
-  if(isset($_GET['go'])){
-  if(preg_match("/^[  a-zA-Z]+/", $_POST['ingredientname'])){
-  $name=$_POST['ingredientname'];
-  //connect  to the database
-  $db=mysql_connect  ($dbHost, $dbUser,  $dbPassword) or die ('I cannot connect to the database  because: ' . mysql_error());
-  //-select  the database to use
-  $mydb=mysql_select_db($dbName);
-  //-query  the database table
-  $sql = "SELECT * FROM `recipes_db`.`ingredient` WHERE (CONVERT(`ingredientID` USING utf8) LIKE $name OR CONVERT(`ingredientname` USING utf8) LIKE $name OR CONVERT(`ingredient_measurement` USING utf8) LIKE $name)";
-  //-run  the query against the mysql query function
-  $result=mysql_query($sql);
-  //-create  while loop and loop through result set
-  while($row=mysql_fetch_array($result)){
-          $recipetitle  = $row['recipetite'];
-          $recipeID = $row['recipeID'];
-  //-display the result of the array
-  echo $recipetitle;
-  }
-  }
-  else{
-  echo  "<p>Please enter a search query</p>";
-  }
-  }
-  }
+/**********************************************************
+* File: insertTopic.php
+* Author: Br. Burton
+* 
+* Description: Takes input posted from topicEntry.php
+*   This file enters a new scripture into the database
+*   along with its associated topics.
+*
+*   This file actually does not do any rendering at all,
+*   instead it redirects the user to showTopics.php to see
+*   the resulting list.
+***********************************************************/
+
+// get the data from the POST
+$name = $_POST['recipeNAME'];
+$ingmeas = $_POST['ingredientMEAS'];
+$ingname = $_POST['ingredientNAME'];
+$content = $_POST['recipeDESC'];
+$topicIds = $_POST['chkMealType'];
+
+echo "recipename=$name\n";
+echo "ingmeas=$ingmeas\n";
+echo "ingname=$ingname\n";
+echo "content=$content\n";
+
+// we could put additional checks here to verify that all this data is actually provided
+
+
+// It would be better to store these in a different file
+      $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');                                       //Get host from OpenShift
+      $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');                                       //Get Port from OpenShift
+      $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');                                   //Get UserName from OpenShift
+      $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');                               //Get Password from OpenShift
+	  $dbName = "recipes_db"; 
+
+try
+{
+	// Create the PDO connection
+ $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword); 
+
+	// this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
+	$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+
+	// First Add the recipe
+	$query = 'INSERT INTO recipe(recipeNAME, recipeDESC) VALUES(:recipeNAME, :recipeDESC)';
+
+	$statement = $db->prepare($query);
+
+	$statement->bindParam(':recipeNAME', $name);
+	$statement->bindParam(':recipeDESC', $content);
+
+	$statement->execute();
+
+	// get the new id
+	$recipeID = $db->lastInsertId();
+
+        $query2 = 'INSERT INTO ingredient(ingredientNAME, ingredientMEAS) VALUES(:ingredientNAME, :ingredientMEAS)';
+
+	$statement2 = $db->prepare($query2);
+
+	$statement2->bindParam(':ingredientNAME', $ingname);
+	$statement2->bindParam(':ingredientMEAS', $ingmeas);
+
+	$statement->execute();
+
+	// get the new id
+	$ingredientID = $db->lastInsertId();
+        
+	// Now go through each topic id in the list from the user's checkboxes
+	foreach ($mealtypeIDs as $mealtypeID)
+	{
+		$statement = $db->prepare('INSERT INTO recipe(recipeID, mealtypeID) VALUES(:recipeID, :mealtypeID)');
+
+		$statement->bindParam(':recipeID', $recipeID);
+		$statement->bindParam(':mealtypeID', $mealtypeID);
+
+		$statement->execute();
+	}
+}
+catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with DB. Details: $ex";
+	die();
+}
+
+// finally, redirect them to a new page to actually show the topics
+header("Location: showTopics.php");
+die(); // we always include a die after redirects. In this case, there would be no
+       // harm if the user got the rest of the page, because there is nothing else
+       // but in general, there could be things after here that we don't want them
+       // to see.
+
+?>
