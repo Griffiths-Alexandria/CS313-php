@@ -24,7 +24,7 @@
            
 
 	// prepare the statement
-	$statement = $db->prepare("SELECT recipe.recipeNAME, recipe.recipeDESC, ingredient.ingredientNAME, ingredient.ingredientMEAS\n"
+	$statement = $db->prepare("SELECT DISTINCT recipe.recipeNAME, recipe.recipeDESC, ingredient.ingredientNAME, ingredient.ingredientMEAS\n"
     . "FROM ingredient\n"
     . "INNER JOIN recipe\n"
     . "ON ingredient.recipeID=recipe.recipeID LIMIT 0, 30 ");
@@ -36,7 +36,7 @@
 		echo '<p>';
 		echo '<strong>' . $row['recipeName'];
 		echo '</p> <p>';
-                echo '<strong>' . $row['ingredientNAME'] . ' ' . $row['ingredientMEAS'];
+                echo '<strong>' . $row['ingredientMEAS'] . ' ' . $row['ingredientNAME'];
 		echo '</p> <p>';
                 echo $row['recipeDESC'];
 		echo '</p>';
