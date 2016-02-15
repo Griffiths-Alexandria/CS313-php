@@ -43,9 +43,9 @@
 	// Go through each result
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
-		echo '<p>';
+		echo '<h3>';
 		echo '<strong>' . $row['recipeNAME'];
-		echo '</p> <p>';
+		echo '</h3> <p>';
                 echo '<strong>' . $row['ingredientNAME'] . ' ' . $row['ingredientMEAS'];
 		echo '</p> <p>';
                 echo $row['recipeDESC'];
