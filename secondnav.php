@@ -1,6 +1,6 @@
-   <div> 
+   <div class="nav"> 
 
-            <nav>
+
 
                 <ul>
                     
@@ -15,6 +15,5 @@
 
 
 
-            </nav>
 
         </div> 
