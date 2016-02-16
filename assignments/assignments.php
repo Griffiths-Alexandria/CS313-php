@@ -14,6 +14,7 @@
 
         <p class="paragraph"> 
             <a href="/assignments/htmlsurvey.php" title="phpsurvey" class="font">PHP Survey</a>
+            <a href="/assignments/login/index.php" title="login" class="font">LOGIN</a>
         </p>
 
 
