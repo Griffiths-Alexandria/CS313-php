@@ -40,17 +40,18 @@ ON recipeingredient.ingredientID=ingredient.ingredientID
 
                 // Go through each result
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                    
                     $recipeNAME = $row['recipeNAME'];
                     $recipeDESC = $row['recipeDESC'];
                     $ingredientMEAS = $row['ingredientMEAS'];
                     $ingredientNAME = $row['ingredientNAME'];
                     
                     echo '<h2>';
-                    echo '<strong>' . array_unique($recipeNAME);
+                    echo '<strong>' . $recipeNAME;
                     echo '</h2> <p>';
-                    echo '<strong>' . $ingredientMEAS . $ingredientNAME;
+                    echo '<strong>' . $ingredientMEAS . " ". $ingredientNAME;
                     echo '</p> <p>';
-                    echo array_unique($recipeDESC);
+                    echo $recipeDESC;
                     echo '</p>';
                 }
             } catch (PDOException $ex) {
@@ -61,6 +62,6 @@ ON recipeingredient.ingredientID=ingredient.ingredientID
 
         </div>
 
-        <button value="ADD RECIPE"><a href="recipe.php">ADD RECIPE</a></button>
+    
     </body>
 </html>
