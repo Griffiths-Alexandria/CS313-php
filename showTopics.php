@@ -34,19 +34,19 @@
            
 
 	// prepare the statement
-	$statement = $db->prepare("SELECT recipe.recipeNAME, recipe.recipeDESC, ingredient.ingredientNAME, ingredient.ingredientMEAS\n"
-    . "FROM ingredient\n"
-    . "INNER JOIN recipe\n"
-    . "ON ingredient.recipeID=recipe.recipeID LIMIT 0, 30 ");
+	$statement = $db->prepare("SELECT recipeNAME, recipeDESC FROM recipe");
 	$statement->execute();
 
+        $statements = $db->prepare("SELECT ingredientMEAS , ingredientNAME FROM ingredient INNER JOIN recipe WHERE recipeNAME=$row[recipeNAME]");
+	$statements->execute();
+        
 	// Go through each result
-	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+	while ($row = $statement->fetch(PDO::FETCH_ASSOC) && $row2 = $statements->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<h2>';
 		echo '<strong>' . $row['recipeNAME'];
 		echo '</h2> <p>';
-                echo '<strong>' . $row['ingredientNAME'] . ' ' . $row['ingredientMEAS'];
+                echo '<strong>' . $rows['ingredientNAME'] . ' ' . $rows['ingredientMEAS'];
 		echo '</p> <p>';
                 echo $row['recipeDESC'];
 		echo '</p>';
