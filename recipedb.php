@@ -28,34 +28,18 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // First Add the recipe
-    $query = 'INSERT INTO recipe(recipeNAME, recipeDESC) VALUES(:recipeNAME, :recipeDESC)';
+    $query = 'BEGIN; INSERT INTO recipe(recipeID, recipeNAME, recipeDESC) VALUES(LAST_INSERT_ID(), :recipeNAME, :recipeDESC);'
+            . 'INSERT INTO ingredient(ingredientID, ingredientNAME, ingredient.DESC) VALUES(LAST_INSERT_ID(), :ingredientNAME, :ingredient.DESC;'
+            . 'COMMIT';
 
     $statement = $db->prepare($query);
 
     $statement->bindParam(':recipeNAME', $name);
     $statement->bindParam(':recipeDESC', $content);
+    $statement->bindParam(':ingredientMEAS', $ingmeas);
+    $statement->bindParam(':ingredientDESC', $ingname);
 
     $statement->execute();
-
-    // get the new id
-    $recipeID = $db->lastInsertId();
-
-    $db2 = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-    // this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
-    $db2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $query2 = 'INSERT INTO ingredient(ingredientNAME, ingredientMEAS) VALUES(:ingredientNAME, :ingredientMEAS)';
-
-    $statement2 = $db2->prepare($query2);
-
-    $statement2->bindParam(':ingredientNAME', $ingname);
-    $statement2->bindParam(':ingredientMEAS', $ingmeas);
-
-    $statement2->execute();
-
-    // get the new id
-    $ingredientID = $db->lastInsertId();
 
     // Now go through each topic id in the list from the user's checkboxes
     foreach ($mealtypeIDs as $mealtypeID) {
@@ -74,7 +58,7 @@ try {
 }
 
 // finally, redirect them to a new page to actually show the topics
-header("Location: showTopics.php");
+header("Location: displayrecipes.php");
 die(); // we always include a die after redirects. In this case, there would be no
 // harm if the user got the rest of the page, because there is nothing else
 // but in general, there could be things after here that we don't want them
