@@ -35,22 +35,22 @@ INNER JOIN recipe
 ON recipeingredient.recipeID=recipe.recipeID 
 INNER JOIN ingredient
 ON recipeingredient.ingredientID=ingredient.ingredientID 
-GROUP BY recipe.recipeNAME');
+');
                 $statement->execute();
 
                 // Go through each result
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
                     echo '<h2>';
-                    echo '<strong>' . (array_unique($row)['recipeNAME']);
+                    echo '<strong>' . array_unique($row['recipeNAME']);
                     echo '</h2> <p>';
                     echo '<strong>' . $row['ingredientMEAS'] . ' ' . $row['ingredientNAME'];
                     echo '</p> <p>';
-                    echo '<strong>' . $row['ingredientMEAS'] . ' ' . $row['ingredientNAME'];
+                    echo '<strong>' . array_unique($row['ingredientMEAS']) . ' ' . $row['ingredientNAME'];
                     echo '</p> <p>';
                     echo '<strong>' . $row['ingredientMEAS'] . ' ' . $row['ingredientNAME'];
                     echo '</p> <p>';
-                    echo (array_unique($row)['recipeDESC']);
+                    echo array_unique($row['recipeDESC']);
                     echo '</p>';
                 }
             } catch (PDOException $ex) {
