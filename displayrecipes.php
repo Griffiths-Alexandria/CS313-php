@@ -40,17 +40,24 @@ ON recipeingredient.ingredientID=ingredient.ingredientID
 
                 // Go through each result
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                    
+
                     $recipeNAME = $row['recipeNAME'];
                     $recipeDESC = $row['recipeDESC'];
                     $ingredientMEAS = $row['ingredientMEAS'];
                     $ingredientNAME = $row['ingredientNAME'];
-                    
+                    if (!isset($ids[$recipeNAME])) {
+                        continue;
+                    }
+                    $ids[] = $recipeNAME;
                     echo '<h2>';
                     echo '<strong>' . $recipeNAME;
                     echo '</h2> <p>';
-                    echo '<strong>' . $ingredientMEAS . " ". $ingredientNAME;
+                    echo '<strong>' . $ingredientMEAS . " " . $ingredientNAME;
                     echo '</p> <p>';
+                    if (!isset($id[$recipeDESC])) {
+                        continue;
+                    }
+                    $id[] = $recipeDESC;
                     echo $recipeDESC;
                     echo '</p>';
                 }
@@ -62,6 +69,6 @@ ON recipeingredient.ingredientID=ingredient.ingredientID
 
         </div>
 
-    
+
     </body>
 </html>
