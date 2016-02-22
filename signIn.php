@@ -89,10 +89,17 @@ $dbName = "recipes_db";
 <html>
 <head>
 	<title>Sign In</title>
+                        <meta charset="UTF-8">
+        <meta name="description" content="CS313 Web Engineering">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,php">
+        <meta name="author" content="Alexandria Lenz">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <link type="text/css" rel="stylesheet" href="recipestylesheet.css" media="screen">
 </head>
 
 <body>
-<div>
+<div class="body">
 
 <?php
 if ($badLogin)

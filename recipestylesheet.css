@@ -110,6 +110,11 @@ h2, h3 {
     
 }
 
+label {
+    font-family: 'anonymous_proregular';
+    color: brown;
+}
+
 button a {
     text-decoration: none; 
     color: azure;

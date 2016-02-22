@@ -26,7 +26,7 @@
 </head>
 
 <body>
-<div>
+<div class="body">
 
 <h1>Sign up for new account</h1>
 
