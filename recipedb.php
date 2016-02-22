@@ -29,7 +29,7 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // First Add the recipe
-    $query = 'INSERT INTO recipe(recipeNAME, recipeDESC) VALUES( :recipeNAME, :recipeDESC)';
+    $query = 'INSERT INTO recipe(recipeID, recipeNAME, recipeDESC) VALUES(LAST_INSERT_ID(), :recipeNAME, :recipeDESC)';
            
 
     $statement = $db->prepare($query);
@@ -64,9 +64,5 @@ try {
 
 // finally, redirect them to a new page to actually show the topics
 header("Location: displayrecipes.php");
-die(); // we always include a die after redirects. In this case, there would be no
-// harm if the user got the rest of the page, because there is nothing else
-// but in general, there could be things after here that we don't want them
-// to see.
-
+die();
 
