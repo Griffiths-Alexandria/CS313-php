@@ -29,12 +29,10 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // First Add the recipe
-    $query = 'INSERT INTO recipe(recipeID, recipeNAME, recipeDESC) VALUES(LAST_INSERT_ID(), :recipeNAME, :recipeDESC)';
+    $query = 'INSERT INTO recipe(recipeNAME, recipeDESC) VALUES(:recipeNAME, :recipeDESC)';
            
 
     $statement = $db->prepare($query);
-
-
     
     $statement->bindParam(':recipeNAME', $name);
     $statement->bindParam(':recipeDESC', $content);
