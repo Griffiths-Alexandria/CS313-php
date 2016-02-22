@@ -25,11 +25,11 @@
 
 <form id="mainForm" action="createAccount.php" method="POST">
 
-	<input type="text" id="txtUser" name="txtUser"></input>
+	<input type="text" id="txtUser" name="txtUser">
 	<label for="txtUser">Username</label>
 	<br /><br />
 
-	<input type="password" id="txtPassword" name="txtPassword"></input>
+	<input type="password" id="txtPassword" name="txtPassword">
 	<label for="txtPassword">Password</label>
 	<br /><br />
 
