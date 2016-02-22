@@ -36,21 +36,61 @@ and open the template in the editor.
 
 body {
     background-image: url('foodbackground.jpg');
- 
+    background-attachment: scroll; 
 }
 
+#mainForm {
+    
+}
+
+#recipeNAME {
+    width: 50%;
+    height: 50px;
+}
+
+#recipeDESC {
+    width: 50%; 
+    height: 200px
+}
 
 .signin {
-    
+        background: #fff;
+    opacity: .8;
+    text-align: center;
+    width: 70%;
+    display: block;
+    margin: auto;
+    padding-bottom: 2em;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 25px;
 }
 
 .addrecipe {
     
-   
+       background: #fff;
+    opacity: .8;
+    text-align: center;
+    width: 70%;
+    display: block;
+    margin: auto;
+    padding-bottom: 2em;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 25px;
 }
 
 .signout {
-    
+        background: #fff;
+    opacity: .8;
+    text-align: center;
+    width: 70%;
+    display: block;
+    margin: auto;
+    padding-bottom: 2em;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 25px;
 }
 
 
@@ -61,6 +101,7 @@ body {
     margin: auto;
     background-color: white;
     opacity: .8;
+    border-radius: 25px;
 }
 
 /**NAVIGATION**/

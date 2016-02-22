@@ -23,6 +23,7 @@
 
 
                 <label for="recipeNAME">Recipe Name</label>
+                <br>
                 <input type="text" id="recipeNAME" name="recipeNAME">
                 <br /><br />
 
