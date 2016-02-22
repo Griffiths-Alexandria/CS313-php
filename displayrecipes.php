@@ -39,7 +39,7 @@ ON recipeingredient.ingredientID=ingredient.ingredientID
                 $statement->execute();
 
                 // Go through each result
-                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                while ($row = $statement->fetch(PDO::FETCH_NAMED)) {
                    
                     $recipeDESC = $row['recipeDESC'];
                     $ingredientMEAS = $row['ingredientMEAS'];
