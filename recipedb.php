@@ -33,10 +33,7 @@ try {
            
 
     $statement = $db->prepare($query);
-    
-    // get the new id
-    
-    $recipeID = $db->lastInsertId();
+
 
     
     $statement->bindParam(':recipeNAME', $name);
@@ -44,6 +41,10 @@ try {
 
     $statement->execute();
 
+        
+    // get the new id
+    
+    $recipeID = $db->lastInsertId();
 
     // Now go through each topic id in the list from the user's checkboxes
     foreach ($mealtypeIDs as $mealtypeID) {
