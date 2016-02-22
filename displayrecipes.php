@@ -53,7 +53,7 @@
                     echo '</h2> <p>';
                     //echo '<strong>' . $ingredientMEAS . " " . $ingredientNAME;
                     echo '</p> <p>';
-                    echo $recipeDESC;
+                    echo nl2br($recipeDESC);
                     echo '</p>';
                 }
             } catch (PDOException $ex) {
