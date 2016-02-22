@@ -99,7 +99,7 @@ $dbName = "recipes_db";
 </head>
 
 <body>
-<div class="body">
+<div class="signin">
 
 <?php
 if ($badLogin)

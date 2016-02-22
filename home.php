@@ -36,7 +36,7 @@ else
 
 
 <body>
-<div class="body">
+<div class="signout">
 
 	<h1>Welcome to the back!</h1>
 
