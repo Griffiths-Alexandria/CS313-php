@@ -26,7 +26,7 @@
                 <input type="text" id="recipeNAME" name="recipeNAME">
                 <br /><br />
 
-
+<!--
                 <label for="ingredientMEAS">Ingredient Measurement:</label>
                 <input type="text" id="ingredientMEAS" name="ingredientMEAS">
                 <br /><br />
@@ -59,7 +59,7 @@
                 <label for="ingredientNAME">Ingredient Name:</label>
                 <input type="text" id="ingredientNAME" name="ingredientNAME">
                 <br /><br/>  
-
+-->
                 <label for="recipeDESC">Recipe Description:</label><br />
                 <textarea id="recipeDESC" name="recipeDESC" rows="4" cols="50"></textarea>
                 <br /><br />

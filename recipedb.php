@@ -3,14 +3,14 @@
 
 // get the data from the POST
 $name = $_POST['recipeNAME'];
-$ingmeas = $_POST['ingredientMEAS'];
-$ingname = $_POST['ingredientNAME'];
+//$ingmeas = $_POST['ingredientMEAS'];
+//$ingname = $_POST['ingredientNAME'];
 $content = $_POST['recipeDESC'];
 $mealtypeIDs = $_POST['chkMealType'];
 
 echo "recipeNAME=$name\n";
-echo "ingredientMEAS=$ingmeas\n";
-echo "ingredientNAME=$ingname\n";
+//echo "ingredientMEAS=$ingmeas\n";
+//echo "ingredientNAME=$ingname\n";
 echo "recipeDESC=$content\n";
 
 // we could put additional checks here to verify that all this data is actually provided
@@ -29,22 +29,21 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // First Add the recipe
-    $query = 'INSERT INTO recipe(recipeNAME, recipeDESC) VALUES(:recipeNAME, :recipeDESC);'
-            . 'INSERT INTO ingredient(ingredientNAME, ingredientMEAS) VALUES(:ingredientNAME, :ingredientMEAS)';
+    $query = 'INSERT INTO recipe(recipeNAME, recipeDESC) VALUES( :recipeNAME, :recipeDESC)';
+           
 
     $statement = $db->prepare($query);
-
-    $statement->bindParam(':recipeNAME', $name);
-    $statement->bindParam(':recipeDESC', $content);
-    $statement->bindParam(':ingredientNAME', $ingname);
-    $statement->bindParam(':ingredientMEAS', $ingmeas);
-    $statement->execute();
-
+    
     // get the new id
+    
     $recipeID = $db->lastInsertId();
 
-    // get the new id
-    $ingredientID = $db->lastInsertId();
+    
+    $statement->bindParam(':recipeNAME', $name);
+    $statement->bindParam(':recipeDESC', $content);
+
+    $statement->execute();
+
 
     // Now go through each topic id in the list from the user's checkboxes
     foreach ($mealtypeIDs as $mealtypeID) {

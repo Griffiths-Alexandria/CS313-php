@@ -29,26 +29,29 @@
                 $dbName = "recipes_db";                                                              //Assign a static Database name
                 $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);  //create a secure database variable
                 // prepare the statement
-                $statement = $db->prepare('SELECT DISTINCT recipe.recipeNAME , recipe.recipeDESC, ingredient.ingredientNAME, ingredient.ingredientMEAS
-FROM recipeingredient
-INNER JOIN recipe
-ON recipeingredient.recipeID=recipe.recipeID 
-INNER JOIN ingredient
-ON recipeingredient.ingredientID=ingredient.ingredientID 
-');
+                $statement = $db->prepare('SELECT DISTINCT recipe.recipeNAME, recipe.recipeDESC FROM recipe');
+          
+                //$statement = $db->prepare('SELECT DISTINCT recipe.recipeNAME , recipe.recipeDESC, ingredient.ingredientNAME, ingredient.ingredientMEAS
+//FROM recipeingredient
+//INNER JOIN recipe
+//ON recipeingredient.recipeID=recipe.recipeID 
+//INNER JOIN ingredient
+//ON recipeingredient.ingredientID=ingredient.ingredientID 
+//');
+   
                 $statement->execute();
 
                 // Go through each result
                 while ($row = $statement->fetch(PDO::FETCH_NAMED)) {
                    
                     $recipeDESC = $row['recipeDESC'];
-                    $ingredientMEAS = $row['ingredientMEAS'];
-                    $ingredientNAME = $row['ingredientNAME'];
+                    //$ingredientMEAS = $row['ingredientMEAS'];
+                    //$ingredientNAME = $row['ingredientNAME'];
                     
                     echo '<h2>';
                     echo '<strong>' . $row['recipeNAME'];
                     echo '</h2> <p>';
-                    echo '<strong>' . $ingredientMEAS . " " . $ingredientNAME;
+                    //echo '<strong>' . $ingredientMEAS . " " . $ingredientNAME;
                     echo '</p> <p>';
                     echo $recipeDESC;
                     echo '</p>';
