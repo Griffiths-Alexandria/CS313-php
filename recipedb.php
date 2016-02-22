@@ -1,5 +1,6 @@
 <?php
 
+if(isset($_POST['submit'])) {
 // get the data from the POST
 $name = $_POST['recipeNAME'];
 $ingmeas = $_POST['ingredientMEAS'];
@@ -28,18 +29,22 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // First Add the recipe
-    $query = 'BEGIN; INSERT INTO recipe(recipeID, recipeNAME, recipeDESC) VALUES(LAST_INSERT_ID(), :recipeNAME, :recipeDESC);'
-            . 'INSERT INTO ingredient(ingredientID, ingredientNAME, ingredient.DESC) VALUES(LAST_INSERT_ID(), :ingredientNAME, :ingredient.DESC;'
-            . 'COMMIT';
+    $query = 'INSERT INTO recipe(recipeNAME, recipeDESC) VALUES(:recipeNAME, :recipeDESC);'
+            . 'INSERT INTO ingredient(ingredientNAME, ingredientMEAS) VALUES(:ingredientNAME, :ingredientMEAS)';
 
     $statement = $db->prepare($query);
 
     $statement->bindParam(':recipeNAME', $name);
     $statement->bindParam(':recipeDESC', $content);
+    $statement->bindParam(':ingredientNAME', $ingname);
     $statement->bindParam(':ingredientMEAS', $ingmeas);
-    $statement->bindParam(':ingredientDESC', $ingname);
-
     $statement->execute();
+
+    // get the new id
+    $recipeID = $db->lastInsertId();
+
+    // get the new id
+    $ingredientID = $db->lastInsertId();
 
     // Now go through each topic id in the list from the user's checkboxes
     foreach ($mealtypeIDs as $mealtypeID) {
@@ -58,9 +63,11 @@ try {
 }
 
 // finally, redirect them to a new page to actually show the topics
-header("Location: displayrecipes.php");
+header("Location: showTopics.php");
 die(); // we always include a die after redirects. In this case, there would be no
 // harm if the user got the rest of the page, because there is nothing else
 // but in general, there could be things after here that we don't want them
 // to see.
-?>
+
+}
+
