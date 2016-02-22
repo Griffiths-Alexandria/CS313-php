@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        <?php include $_SERVER['DOCUMENT_ROOT']. '/secondnav.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/secondnav.php'; ?>
         <div class="body">
 
             <h1>Delicious Recipes</h1>
@@ -34,7 +34,31 @@
 
                 <label for="ingredientNAME">Ingredient Name:</label>
                 <input type="text" id="ingredientNAME" name="ingredientNAME">
-                <br /><br/>   
+                <br /><br/>  
+                <label for="ingredientMEAS">Ingredient Measurement:</label>
+                <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+                <br /><br />
+
+
+                <label for="ingredientNAME">Ingredient Name:</label>
+                <input type="text" id="ingredientNAME" name="ingredientNAME">
+                <br /><br/>  
+                <label for="ingredientMEAS">Ingredient Measurement:</label>
+                <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+                <br /><br />
+
+
+                <label for="ingredientNAME">Ingredient Name:</label>
+                <input type="text" id="ingredientNAME" name="ingredientNAME">
+                <br /><br/>  
+                <label for="ingredientMEAS">Ingredient Measurement:</label>
+                <input type="text" id="ingredientMEAS" name="ingredientMEAS">
+                <br /><br />
+
+
+                <label for="ingredientNAME">Ingredient Name:</label>
+                <input type="text" id="ingredientNAME" name="ingredientNAME">
+                <br /><br/>  
 
                 <label for="recipeDESC">Recipe Description:</label><br />
                 <textarea id="recipeDESC" name="recipeDESC" rows="4" cols="50"></textarea>
