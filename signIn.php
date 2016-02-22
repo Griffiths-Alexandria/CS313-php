@@ -101,7 +101,10 @@ if ($badLogin)
 }
 ?>
 
-<h1>Please sign in below:</h1>
+    
+    
+<h1>Our Recipe Database</h1>
+<h3>PLEASE SIGN IN BELOW:</h3>
 
 <form id="mainForm" action="signIn.php" method="POST">
 

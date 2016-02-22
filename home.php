@@ -30,7 +30,7 @@ else
 <body>
 <div>
 
-	<h1>Welcome to the homepage!</h1>
+	<h1>Welcome to the back!</h1>
 
 	Your username is: <?= $username ?><br /><br />
 

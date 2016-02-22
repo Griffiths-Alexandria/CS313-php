@@ -104,7 +104,7 @@ h1 {
     color: burlywood; 
 }
 
-h2 {
+h2, h3 {
     font-family: 'anonymous_proregular';
     color: brown;
     
